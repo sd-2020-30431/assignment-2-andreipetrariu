@@ -1,0 +1,25 @@
+This is a short guide for setting up and running the second SD assignment, the Client-Server 'WasteLess' application. 
+
+What I uploaded:
+	-sd-assignment2 folder: the eclipse project of this application, containing both the server 
+and the client side of the app.
+	-wastelessdb_script: SQL for importing the tables and data of the 
+app's database (MySQL).
+
+How to run it:
+	1) Create a new schema in MySQL(preferably named 'wasteless_db', but if another name is used, modify the url in the 'hibernate.cfg.xml'
+file from the project's folder with the new schema's name). Then, import the data from 'wastelessdb_script'.
+	
+	2) Open the project in Eclipse and setup a server(I used Tomcat). If there's an unresolved import please update the project
+(right-click project folder -> maven -> update project).
+	
+	3) Modify the 'WLClient.java' file from the client package to send requests to the server with correct addresses\
+(in the source file, where the HttpURLConnection objects are initialized, modify the URL so that it works with your server's 
+configuration. By default the URL is 'http://localhost:8081/sd-assignment2/...'). 
+
+	4) Modify the paths of the report files given as properties in the 'wasteLessClient' bean defined inside the applicationContext.xml file.
+
+	5) Change the root and password of the database's connection in the 'hibernate.cfg.xml' file. Also change the connection url if the schema
+is not named 'wasteless_db'.
+
+	6) Run the project on server then run the 'Main.java' file as a java application.

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	
+    <bean id="wasteLessGUI"
+    	class="client.MainGUI" scope="prototype">
+    </bean>
+    
+    <bean id="wasteLessClient"
+    		class="client.WLClient">
+    		<property name="weeklyReports" value="C:\\Users\\Andrei\\Desktop\\Facultate\\Software_Design\\WasteLess\\weeklyReports.txt" />
+    		<property name="monthlyReports" value="C:\\Users\\Andrei\\Desktop\\Facultate\\Software_Design\\WasteLess\\monthlyReports.txt"/>
+    		<property name="donationPlaces" value="C:\\Users\\Andrei\\Desktop\\Facultate\\Software_Design\\WasteLess\\places.txt"/>
+    	</bean>
+    <bean id="wasteLessLoginUI"
+    		class="client.LoginGUI">
+    		<property name="client" ref="wasteLessClient" />
+    	</bean>
+
+</beans>
+
+
+
+
+
